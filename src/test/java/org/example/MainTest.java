@@ -78,4 +78,53 @@ class MainTest {
         assertEquals(expected.size(),res.size());
         assertEquals(expected,res);
     }
+
+    @Test
+    void testFindMax() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        double maxRes1 = main.findMax(list1);
+
+        List<Double> list2 = main.createArrayY(0.0,2.0,0.002);
+        double maxRes2 = main.findMax(list2);
+
+        assertEquals(2.0,maxRes1);
+        assertEquals(8.8574908,maxRes2);
+    }
+
+    @Test
+    void testFindMin() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        double minRes1 = main.findMin(list1);
+
+        List<Double> list2 = main.createArrayY(0.0,2.0,0.002);
+        double minRes2 = main.findMin(list2);
+
+        assertEquals(0.0,minRes1);
+        assertEquals(0.9391485505499116,minRes2);
+
+    }
+
+    @Test
+    void testFindSum() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        double sumRes1 = main.findSum(list1);
+
+        List<Double> list2 = main.createArrayY(0.0,2.0,0.002);
+        double sumRes2 = main.findSum(list2);
+
+        assertEquals(1001.0,sumRes1);
+        assertEquals(4224.112998155183,sumRes2);
+    }
+
+    @Test
+    void testFindAverage() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        double averageRes1 = main.findAverage(list1);
+
+        List<Double> list2 = main.createArrayY(0.0,2.0,0.002);
+        double averageRes2 = main.findAverage(list2);
+
+        assertEquals(1.0,averageRes1);
+        assertEquals(4.219893105050133,averageRes2);
+    }
 }

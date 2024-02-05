@@ -4,6 +4,7 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -87,5 +88,29 @@ public class Main {
         return res;
     }
 
+    public double findMax(List<Double> array){
+
+        return array.stream()
+                .mapToDouble(Double::doubleValue)
+                .max()
+                .getAsDouble();
+    }
+
+    public double findMin(List<Double> array){
+
+        return array.stream()
+                .mapToDouble(Double::doubleValue)
+                .min()
+                .getAsDouble();
+    }
+
+    public double findSum(List<Double> array){
+        return array.stream().mapToDouble(Double::doubleValue).sum();
+    }
+
+    public double findAverage(List<Double> array){
+
+        return array.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+    }
 
 }
