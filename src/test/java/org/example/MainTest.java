@@ -127,4 +127,20 @@ class MainTest {
         assertEquals(1.0,averageRes1);
         assertEquals(4.219893105050133,averageRes2);
     }
+
+    @Test
+    void testFindMaxIndex() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        int num = main.findMaxIndex(list1);
+
+        assertEquals(1000,num);
+    }
+
+    @Test
+    void testFindMinIndex() {
+        List<Double> list1 = main.createArrayX(0.0,2.0,0.002);
+        int num = main.findMinIndex(list1);
+
+        assertEquals(0,num);
+    }
 }

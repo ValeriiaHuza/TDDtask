@@ -88,12 +88,22 @@ public class Main {
         return res;
     }
 
+    public int findMaxIndex(List<Double> array){
+        double max = findMax(array);
+        return array.indexOf(max);
+    }
+
     public double findMax(List<Double> array){
 
         return array.stream()
                 .mapToDouble(Double::doubleValue)
                 .max()
                 .getAsDouble();
+    }
+
+    public int findMinIndex(List<Double> array){
+        double min = findMin(array);
+        return array.indexOf(min);
     }
 
     public double findMin(List<Double> array){
