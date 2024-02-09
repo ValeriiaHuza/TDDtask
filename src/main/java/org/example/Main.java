@@ -25,16 +25,16 @@ public class Main {
         List<Double> resX = createArrayY(0.0,2.0,0.002);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("list.txt", StandardCharsets.UTF_8))) {
-            // Write each element of the array to the file
             for (Double element : resX) {
                 writer.write(String.valueOf(element));
-                writer.newLine(); // Add a newline character between elements if needed
+                writer.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    //task 3
     public double calculateFunction(double x) {
 
         double a = 2.7;
@@ -56,10 +56,12 @@ public class Main {
         return res;
     }
 
+    //task 4
     public int stepsAmount(double start, double end, double step){
         return (int) Math.ceil((end - start) / step)+1 ;
     }
 
+    //task 5
     public List<Double> createArrayX(double start, double end, double step){
 
         List<Double> res = new ArrayList<>();
@@ -75,6 +77,7 @@ public class Main {
         return res;
     }
 
+    //task 5
     public List<Double> createArrayY(double start, double end, double step){
 
         List<Double> res = new ArrayList<>();
@@ -88,19 +91,20 @@ public class Main {
         return res;
     }
 
+    //task 6
     public int findMaxIndex(List<Double> array){
         double max = findMax(array);
         return array.indexOf(max);
     }
 
     public double findMax(List<Double> array){
-
         return array.stream()
                 .mapToDouble(Double::doubleValue)
                 .max()
                 .getAsDouble();
     }
 
+    //task 6
     public int findMinIndex(List<Double> array){
         double min = findMin(array);
         return array.indexOf(min);
@@ -114,13 +118,19 @@ public class Main {
                 .getAsDouble();
     }
 
+    //task 6
     public double findSum(List<Double> array){
         return array.stream().mapToDouble(Double::doubleValue).sum();
     }
 
+    //task 6
     public double findAverage(List<Double> array){
-
         return array.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+    }
+
+    //task 7
+    public void printArrayElement(int elementIndex, List<Double> array){
+        System.out.print(array.get(elementIndex));
     }
 
 }

@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -132,6 +135,20 @@ class MainTest {
 
         assertEquals(0,num1);
         assertEquals(1000,num2);
+
+    }
+
+    @Test
+    void testPrintArrayElement() {
+
+        PrintStream ps = System.out;
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        main.printArrayElement(0,listX);
+        assertEquals("0.0",out.toString());
+
+        System.setOut(ps);
 
     }
 }
